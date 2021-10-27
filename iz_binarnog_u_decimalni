@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int main()
+{
+    int binarni=1011;
+    int broj;
+    int decimalni=0;
+
+    for(int i=0; 0<binarni; i++){
+        broj= binarni%10;
+        binarni= binarni/10;
+
+        decimalni= decimalni+(broj*pow(2,i));
+    }
+
+    printf("%d", decimalni);
+}
