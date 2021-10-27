@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int factorial=3;
+    int broj=1;
+    for(int i=1; i<=factorial; i++){
+        broj= broj*i;
+    }
+
+    printf("%d", broj);
+}
