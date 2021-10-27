@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main(){
+    int decimalni_broj=53;
+    int binarni[10];
+    int i=0;
+    for(i=0;0<decimalni_broj;i++){
+        binarni[i]= decimalni_broj%2;
+        decimalni_broj= decimalni_broj/2;
+        printf("i= %d \n",i);
+    }
+
+
+    for(i=i-1;i>=0;i--){
+        printf("\n %d ",binarni[i]);
+    }
+
+}
