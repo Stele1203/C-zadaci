@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int broj=5;
+
+        for(int i=broj; i>0; i--){
+            printf("%d \n", i);
+        }
+}
