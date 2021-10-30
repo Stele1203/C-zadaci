@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int broj=12121;
+
+
+    if(broj%2== 0){
+        printf("broj je paran");
+    }else{
+        printf("Broj nije paran");
+    }
+}
