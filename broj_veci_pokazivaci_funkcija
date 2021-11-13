@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+
+
+int main()
+{
+    int broj1 =10;
+    int broj2= 15;
+
+
+    int max= maximum(&broj1, &broj2);
+
+    printf("%d je veci",max);
+}
+
+    int maximum(int *b1, int *b2){
+        int max;
+
+        if(*b1>*b2){
+            max= *b1;
+        }else{
+            max= *b2;
+        }
+        return max;
+    }
