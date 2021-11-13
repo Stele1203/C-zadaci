@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+
+
+int main()
+{
+    int broj1 =10;
+    int broj2= 15;
+
+    int sum= sab(&broj1, &broj2);
+
+    printf("%d", sum);
+}
+
+ int sab(int* b1, int* b2){
+    int sum= *b1+ *b2;
+    return sum;
+ }
