@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+
+
+int main()
+{
+    int n;
+    int arr[50];
+    printf("Unesi broj elemenata \n");
+    scanf("%d",&n);
+
+    for(int i=0; i<n;i++){
+        printf("Element br- %d: ", i);
+        scanf("%d",arr+i);
+        printf("\n");
+    }
+    printf("\n \n \n \n");
+    for(int i=0; i<n;i++){
+        printf("%d \n", *(arr+i));
+    }
+}
