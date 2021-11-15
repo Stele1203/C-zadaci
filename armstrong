@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+void armstrong(int* num){
+    int broj= *num;
+    int k=broj;
+    int arr[100];
+    int i=0;
+    int racun=0;
+    while(broj>0){
+        k=k%10;
+        arr[i]=k;
+        broj= broj/10;
+        k=broj;
+        i++;
+    }
+
+    for(int j=0; j<i;j++){
+        //printf("%d",j);
+        racun= racun+ pow(arr[j],(i));
+    }
+    printf("%d", racun);
+
+
+}
+
+
+int main()
+{
+    int broj=143;
+  armstrong(&broj);
+}
