@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <string.h>
+
+
+void zamjena(int* broj){
+    int num= *broj;
+    int arr[100];
+    int i= num;
+    int j=0;
+        while(num>0){
+            i=i%10;
+            arr[j]=i;
+
+            num= num/10;
+            i= num;
+            j++;
+
+        }
+
+       for(int o=0; o<j; o++){
+         printf("%d",arr[o]);
+       }
+}
+
+int main()
+{
+   int broj;
+   printf("Unesi neki broj \n");
+
+   scanf("%d", &broj);
+
+   zamjena(&broj);
+}
