@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+
+
+int main(){
+   int niz[]={7,4,10,15,12};
+   int parni=0;
+   int neparni=0;
+
+   for(int i=0; i<5;i++){
+       if(niz[i]%2==0){
+         parni= parni+niz[i];
+       }else{
+            neparni=neparni+niz[i];
+       }
+   }
+   printf("parni %d, neparni %d", parni,neparni);
+}
