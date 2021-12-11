@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+
+
+int main(){
+   int granica=70;
+   int stepen=1;
+
+   do{
+        printf("%d \n",stepen);
+    stepen=stepen*2;
+
+   }while(granica>stepen);
+
+}
