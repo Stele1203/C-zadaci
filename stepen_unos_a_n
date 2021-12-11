@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+
+
+int main()
+{
+     int n;
+   int a;
+   scanf("%d %d", &n,&a);
+   int i=1;
+   int stepen=1;
+   while(i<=a){
+       stepen= stepen*n;
+       i++;
+   }
+
+   printf("%d", stepen);
+
+}
