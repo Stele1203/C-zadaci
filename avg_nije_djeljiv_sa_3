@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+
+
+int main(){
+   int niz[]={3,9,1,15,12};
+   double avg=0;
+   double mrk=0;
+    int j=0;
+   for(int i=0; i<5; i++){
+
+        if(niz[i]%3!=0){
+           j++;
+           avg=avg+niz[i];
+        }
+
+   }
+   mrk=avg/j;
+   printf("%lf",mrk);
+}
