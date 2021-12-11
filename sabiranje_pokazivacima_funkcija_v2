@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+int sum(int *m, int *n){
+    int k= *m;
+    int b= *n;
+
+    int sum= k+b;
+
+    return sum;
+}
+
+int main()
+{
+    int m;
+    int n;
+     scanf("%d %d", &m, &n);
+
+    printf("%d",sum(&m, &n));
+
+}
