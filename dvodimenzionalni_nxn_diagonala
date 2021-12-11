@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+
+
+int main(){
+    int n;
+    printf("Unesi broj elemenata n: ");
+    scanf("%d \n",&n);
+
+    int niz[n][n];
+
+    for(int i=0; i<n;i++){
+        for(int j=0; j<n;j++){
+            scanf("%d \n", &niz[i][j]);
+        }
+    }
+
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            if(j==i){
+                printf("%d ",niz[i][j]);
+            }
+        }
+    }
+}
