@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+
+
+int main(){
+   int niz[]={7,4,10,15};
+   int mrk;
+   for(int i=0;i<4;i++){
+     for(int j=i+1; j<4;j++){
+        if(niz[j]>niz[i]){
+            mrk= niz[i];
+            niz[i]= niz[j];
+             niz[j]=mrk;
+        }
+     }
+   }
+
+   for(int k=0; k<4;k++){
+    printf("%d \n", niz[k]);
+   }
+}
