@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+
+void ascii(){
+    char a;
+    for(a='A'; a<='Z';a++){
+        printf("ASCII kod za: %c je: %d \n",a,a);
+    }
+}
+
+int main(){
+    ascii();
+}
