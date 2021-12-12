@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+
+
+int main(){
+    int a,b,c,max,*pa,*pb,*pc,*pmax;
+
+    pa= &a;
+    pb=&b;
+    pc=&c;
+    pmax=&max;
+
+    scanf("%d %d %d",pa,pb,pc);
+
+    *pmax=*pa;
+
+    if(*pmax<*pb){
+        *pmax=*pb;
+    }
+    if(*pmax<*pc){
+        *pmax=*pc;
+    }
+
+    printf("Max je %d, na adres %x",*pmax,pmax);
+}
