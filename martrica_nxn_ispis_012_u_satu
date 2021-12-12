@@ -1,0 +1,91 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+
+
+int main(){
+    int i, j , n;
+    printf("Kvadratna matrica se popunjava spiralno \n");
+    printf("Unesite dimenziju kvadratne matrice: ");
+    scanf("%d", &n);
+
+    int lijevo = 0;   
+    int desno = n-1;  
+    int vrh = 0;     
+    int dno = n -1;
+    int br = 1; 
+    int A[n][n];
+    int prethodni=0;
+    do{
+
+    // lijevo >> desno    red
+    for(j = lijevo; j <= desno; j++) {
+        if(prethodni==0){
+            A[vrh][j] = prethodni;
+            prethodni=1;
+        }else if(prethodni==1){
+            A[vrh][j] = prethodni;
+            prethodni=2;
+        }else if(prethodni==2){
+            A[vrh][j] = prethodni;
+            prethodni=0;
+        }
+        }
+    vrh++;
+
+    // vrh >> dno     kolona
+    for(j = vrh; j <= dno; j++) {
+        if(prethodni==0){
+            A[j][desno] = prethodni;
+            prethodni=1;
+        }else if(prethodni==1){
+            A[j][desno] = prethodni;
+            prethodni=2;
+        }else if(prethodni==2){
+            A[j][desno] = prethodni;
+            prethodni=0;
+        }
+        }
+    desno--;
+
+    // lijevo << desno    red
+    for(j = desno; j >= lijevo; j--) {
+       if(prethodni==0){
+            A[dno][j] = prethodni;
+            prethodni=1;
+        }else if(prethodni==1){
+            A[dno][j] = prethodni;
+            prethodni=2;
+        }else if(prethodni==2){
+            A[dno][j] = prethodni;
+            prethodni=0;
+        }
+        }
+    dno--;
+
+    // vrh << dno   kolona
+    for(j = dno; j >= vrh; j--) {
+       if(prethodni==0){
+            A[j][lijevo] = prethodni;
+            prethodni=1;
+        }else if(prethodni==1){
+            A[j][lijevo] = prethodni;
+            prethodni=2;
+        }else if(prethodni==2){
+             A[j][lijevo] = prethodni;
+            prethodni=0;
+        }
+        }
+    lijevo++;
+    }while (lijevo <= desno );
+
+    printf("\nSpiralna matrica\n");
+    for(i=0; i < n; i++) {
+        for(j=0; j < n; j++) {
+            printf("%4d%4 ", A[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
