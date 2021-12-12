@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+
+
+int main(){
+
+    printf("Unesi broj elemenata u nizu: ");
+    int n;
+    scanf("%d",&n);
+    int arr[n];
+
+    printf("\n");
+    printf("Unesi prije kog elementa zelis da umetnes novi broj");
+    int nb;
+    scanf("%d",&nb);
+    if(nb>n){
+        printf("\n Unos nije dobar, unesi opet: ");
+        scanf("%d",&nb);
+    }
+
+    printf("\n Unesi vrijednost novog broja");
+    int vnb;
+    scanf("%d",&vnb);
+
+
+    for(int i=0; i<n;i++){
+        arr[i]=i;
+    }
+
+    for(int i=n-1;i>=nb-1;i--){
+        arr[i+1]= arr[i];
+    }
+    arr[nb-1]=vnb;
+    n++;
+    printf("\n");
+    for(int i=0;i<n;i++){
+        printf("%d ", arr[i]);
+    }
+}
