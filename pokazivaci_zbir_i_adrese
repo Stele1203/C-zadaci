@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+
+
+int main(){
+    int a,b,c,*pa,*pb,*pc;
+
+    pa=&a;
+    pb=&b;
+    pc=&c;
+
+    printf("Upisi dva broja");
+    scanf("%d %d",pa,pb);
+
+    *pc=*pa+*pb;
+
+    printf("a=%d, adresa je %x\n",*pa,pa);
+    printf("b=%d, adresa je %x\n",*pb,pb);
+    printf("c=%d, adresa je %x\n",*pc,pc);
+}
