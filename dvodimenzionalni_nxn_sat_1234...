@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+
+
+int main(){
+
+    printf("Unesi kvadratnu matricu n: ");
+    int n;
+    scanf("%d",&n);
+
+    int A[n][n];
+
+    int lijevo=0;
+    int desno=n-1;
+    int gore=0;
+    int dolje=n-1;
+    int brojac=0;
+    do{
+        for(int i=lijevo; i<=desno;i++){
+            A[gore][i]= brojac++;
+        }
+        gore++;
+        for(int i=gore; i<=dolje;i++){
+            A[i][desno]=brojac++;
+        }
+        desno--;
+
+        for(int i=desno;i>=lijevo;i--){
+            A[dolje][i]=brojac++;
+        }
+        dolje--;
+
+        for(int i=dolje; i>=gore;i--){
+            A[i][lijevo]=brojac++;
+        }
+        lijevo++;
+    }while(desno>=lijevo);
+
+    printf("\n Matrica stampa \n");
+
+    for(int i=0; i<n;i++){
+        for(int j=0; j<n;j++){
+            printf("%d",A[i][j]);
+        }
+        printf("\n");
+    }
+}
