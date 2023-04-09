@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int br1,br2,br3,*pbr1,*pbr2,*pbr3,max,*maxp;
+
+    pbr1=&br1;
+    pbr2=&br2;
+    pbr3=&br3;
+    maxp=&br1;
+
+    scanf("%d %d %d",pbr1,pbr2,pbr3);
+
+    if(*pbr1>*maxp){
+        *maxp=*pbr1;
+    }else if(*pbr2>*maxp){
+        *maxp=*pbr2;
+    }else if(*pbr3>*maxp){
+        *maxp=*pbr3;
+    }
+    printf("%d",*maxp);
+}
