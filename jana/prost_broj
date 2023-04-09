@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int i=0,br=0,*pbr,a,*pa;
+    pbr=&br;
+    pa=&a;
+    scanf("%d",pa);
+    for(i=2;i<*pa;i++){
+        printf("%d",i);
+        if(*pa%i==0){
+            *pbr++;
+            break;
+        }
+    }
+    if(*pbr>0){
+        printf("Broj nije prost");
+    }else{
+        printf("Broj je prost");
+    }
+}
