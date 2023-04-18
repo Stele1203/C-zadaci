@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+void pokazivaci(int *a, int *b){
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
+
+void sortArray(int *a){
+    for(int i=0;i<10;i++){
+        for(int j=i+1;j<10;j++){
+            if(*(a+j)>*(a+i)){
+                int tmp=*(a+i);
+                *(a+i)=*(a+j);
+                *(a+j)=tmp;
+            }
+        }
+    }
+}
+
+
+int main() {
+
+    int niz[10];
+    int *pniz;
+
+    pniz=niz;
+
+    for(int i=0;i<10;i++){
+        scanf("%d",pniz+i);
+    }
+    sortArray(pniz);
+    for(int i=0;i<10;i++){
+        printf("%d ",*(pniz+i));
+    }
+
+
+    return 0;
+}
