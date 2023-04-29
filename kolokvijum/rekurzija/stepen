@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int stepen(int a,int b){
+    if(b>=1){
+        return a*stepen(a,b-1);
+    }else{
+        return 1;
+    }
+}
+
+int main() {
+    printf("Hello, World!\n");
+    int mrk= stepen(5,2);
+    printf("%d",mrk);
+    return 0;
+}
