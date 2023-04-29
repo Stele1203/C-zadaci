@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int zibr(int a){
+    if(a>=1){
+        return a+ zibr(a-1);
+    }else return 1;
+}
+
+int main() {
+    printf("Hello, World!\n");
+    int mrk= zibr(5);
+    printf("%d",mrk);
+    return 0;
+}
