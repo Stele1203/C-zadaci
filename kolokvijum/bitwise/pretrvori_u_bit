@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+void displayBits(unsigned value){
+    unsigned c;
+    unsigned displayMask=1<<31;
+    printf("%7u=",value);
+
+    for(c=1;c<=32;c++){
+        putchar(value & displayMask ?'1':'0');
+        value<<=1;
+        if(c%8==0){
+            putchar(' ');
+        }
+    }
+
+
+    putchar('\n');
+}
+
+int main()
+{
+    ////unsigned displayMask=1<<31;
+    ////printf("%7u",displayMask);
+    displayBits(4);
+    return 0; /* indicates successful termination */
+}
+
+
+
