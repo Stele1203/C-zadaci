@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+void hex(int a){
+
+    if(a>=1){
+        printf("%d",a%16);
+        hex(a/16);
+    }
+}
+
+int main() {
+    hex(2607);
+    return 0;
+}
