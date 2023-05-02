@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+
+    char a[100];
+    int broj_praznina=0;
+    fgets(a,100,stdin);
+
+    for(int i=0;i< strlen(a);i++){
+        if(a[i]==' '){
+            broj_praznina++;
+        }
+    }
+
+    printf("%d",broj_praznina);
+    return 0;
+}
