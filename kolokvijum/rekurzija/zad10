@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int dodaj(int x){
+
+    if(x>=1){
+        int poslednja_cifra=x%10;
+        int novi_broj= dodaj(x/10);
+        //printf("%d Poslednja \n",poslednja_cifra);
+        //printf("%d Poslednja \n",novi_broj);
+
+        if(poslednja_cifra%2==1){
+            return novi_broj*100+poslednja_cifra;
+        }else{
+            return novi_broj*10+poslednja_cifra;
+        }
+    }
+}
+
+int main() {
+    printf("%d",dodaj(21321));
+}
