@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    unsigned x,k;
+
+    scanf("%u %u",&x,&k);
+
+    if(k>= sizeof(int)*8){
+        printf("K nije u opsegu");
+        return 1;
+    }
+
+    x|=1<<k;
+
+    printf("%u",x);
+
+    return 0;
+}
