@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int najveca_cifra(int x){
+    int static max=0;
+
+    if(x>=1){
+        if(max<(x%10)){
+            max=x%10;
+        }
+        najveca_cifra(x/10);
+    }else{
+        return max;
+    }
+}
+
+int main() {
+
+    printf("%d",najveca_cifra(340219));
+    ///printf("%d",3452%10);
+    return 0;
+}
