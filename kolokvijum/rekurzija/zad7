@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int obrni(int a){
+    static int b=0;
+    if(a>=1) {
+        b = (a % 10)+ 10*b;
+        return obrni(a / 10);
+    }else{
+        return b;
+    }
+}
+
+int main() {
+    printf("%d",obrni(4321));
+}
