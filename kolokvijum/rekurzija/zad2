@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int broj_parnih(int x){
+    int static i=0;
+    if(x>=1){
+        broj_parnih(x/10);
+        if((x%10)%2==0){
+           // printf("%d",x%10);
+            i++;
+        }else{
+            return i;
+        }
+        ///broj_parnih(x/10);
+    }
+}
+
+int main() {
+
+    printf("%d",broj_parnih(340212));
+    ///printf("%d",3452%10);
+    return 0;
+}
