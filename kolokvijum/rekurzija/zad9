@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int palindrom(int* a, int n){
+
+    if(n>=1){
+        if(a[n-1]==a[0]){
+            return palindrom(a+1,n-2);
+        }else{
+            return 1;
+        }
+    }else{
+        return 0;
+    }
+}
+
+int main() {
+
+    int *a;
+    a=(int*) malloc(10 * sizeof(int));
+
+    for(int i=0;i<10;i++){
+        scanf("%d",&a[i]);
+    }
+    printf("%d",palindrom(a,10));
+
+   /* for(int i=0;i<10;i++){
+        printf("%d ",*(a+i));
+    }*/
+    free(a);
+}
