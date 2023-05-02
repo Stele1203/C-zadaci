@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void ispisi1(int n){
+
+    if(n<10){
+        printf("%d",n);
+    }else{
+        ispisi1(n/10);
+        printf("%d",n%10);
+    }
+}
+
+
+void ispisi2(int n){
+
+    if(n>=1){
+        printf("%d ",n%10);
+        ispisi2(n/10);
+    }
+}
+
+int main() {
+
+    ispisi1(34021);
+    ///printf("%d",3452%10);
+    return 0;
+}
