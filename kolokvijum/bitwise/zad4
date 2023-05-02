@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int sumaBitova(unsigned x){
+    int sum=0;
+    while(x){
+        sum+=x&1;
+        x>>=1;
+    }
+    return sum;
+}
+
+
+int main() {
+
+    printf("%d", sumaBitova(126789));
+    return 0;
+}
