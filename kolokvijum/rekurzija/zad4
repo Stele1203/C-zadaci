@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int ukloni(int x, int c) {
+    if (x == 0) {
+        return 0;
+    }
+    int posljednja_cifra = x % 10;
+    int novi_broj = ukloni(x / 10, c);
+    if (posljednja_cifra != c) {
+        return novi_broj * 10 + posljednja_cifra;
+    } else {
+        return novi_broj;
+    }
+}
+
+int main() {
+    int x, c;
+    printf("Unesite broj: ");
+    scanf("%d", &x);
+    printf("Unesite cifru za uklanjanje: ");
+    scanf("%d", &c);
+    int novi_broj = ukloni(x, c);
+    printf("Novi broj bez cifre %d je: %d\n", c, novi_broj);
+    return 0;
+}
