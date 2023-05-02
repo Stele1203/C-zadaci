@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+   unsigned x;
+   unsigned k;
+
+    scanf("%u %u",&x,&k);
+
+    if(k>=sizeof(int) * 8){
+        printf("Broj nije u opsegu");
+        return 1;
+    }
+
+    if(x&(1<<k)){
+        printf("Nalazai se 1");
+    }else{
+        printf("Ne nalazai se 1");
+    }
+    return 0;
+}
