@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main() {
+   int name[30];
+   float balance;
+   int acc;
+   int zahtjev;
+
+   FILE *ime= fopen("clients.txt","r");
+
+   printf("1. Lista sa stanjem nula \n 2.Lista sa kreditnim zaduzenjem \n 3.Lista sa debitnim akauntom \n");
+
+   scanf("%d",&zahtjev);
+
+    switch (zahtjev) {
+        printf("%-10s %-10s %-10s","Akaunt","Ime","Stanje");
+        case 1:
+            while (fscanf(ime,"%d %s %f",&acc,name,&balance)==3){
+                if(balance==0){
+                    printf("%-10d %-10s %-10f \n",acc,name,balance);
+                }
+            }
+
+            break;
+        case 2:
+            while (fscanf(ime,"%d %s %f",&acc,name,&balance)==3){
+                if(balance<0){
+                    printf("%-10d %-10s %-10f \n",acc,name,balance);
+                }
+            }
+            break;
+
+        case 3:
+            while (fscanf(ime,"%d %s %f",&acc,name,&balance)==3){
+                if(balance>0){
+                    printf("%-10d %-10s %-10f \n",acc,name,balance);
+                }
+            }
+    }
+
+    return 0;
+}
