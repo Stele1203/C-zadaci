@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int acc;
+    char ime[50];
+    float stanje;
+
+    FILE *filePtr= fopen("clients.txt","r");
+    if(filePtr==NULL){
+        printf("Ne moze se otvoriti");
+        return 1;
+    }else{
+
+        printf("%-10s %-10s %-10s \n","Akaunt","Ime","Stanje");
+        fscanf(filePtr,"%d %s %f \n",&acc, ime,&stanje);
+        // printf("%-10d %-10s %-10f \n",acc,ime,stanje);
+        while(!feof(filePtr)){
+            printf("%-10d %-10s %-10f \n",acc,ime,stanje);
+            fscanf(filePtr,"%d %s %f \n",&acc, ime,&stanje);
+        }
+        fclose(filePtr);
+    }
+
+
+    return 0;
+}
