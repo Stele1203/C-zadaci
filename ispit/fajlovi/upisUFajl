@@ -1,39 +1,24 @@
 #include <stdio.h>
 
 int main() {
-    int account;
-    char name[30];
-    double balance;
+    int acc;
+    char ime[50];
+    float stanje;
 
-    FILE *filePtr;
-
-    if ((filePtr = fopen("clients.txt", "a")) == NULL) {
-        printf("File could not be opened");
+    FILE *filePtr= fopen("clients.txt","r");
+    if(filePtr==NULL){
+        printf("Ne moze se otvoriti");
         return 1;
-    }
+    }else{
 
-    printf("Unesite podatke o klijentima:\n");
-    printf("Unesite 0 za zavrsetak unosa.\n");
+        printf("%-10s %-10s %-10s \n","Akaunt","Ime","Stanje");
 
-    while (1) {
-        printf("Account: ");
-        scanf("%d", &account);
-
-        if (account == 0) {
-            break;
+        while(fscanf(filePtr,"%d %49s %f", &acc, ime, &stanje) == 3){
+            printf("%-10d %-10s %-10f \n", acc, ime, stanje);
         }
 
-        printf("Name: ");
-        scanf(" %s", name);
-
-        printf("Balance: ");
-        scanf("%lf", &balance);
-
-        fprintf(filePtr, "%d %s %.2lf\n", account, name, balance);
+        fclose(filePtr);
     }
-
-    fclose(filePtr);
-    printf("Podaci su uspesno upisani u datoteku clients.txt.\n");
 
     return 0;
 }
