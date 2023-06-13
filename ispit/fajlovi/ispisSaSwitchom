@@ -11,9 +11,8 @@ int main() {
    printf("1. Lista sa stanjem nula \n 2.Lista sa kreditnim zaduzenjem \n 3.Lista sa debitnim akauntom \n");
 
    scanf("%d",&zahtjev);
-
+    printf("%-10s %-10s %-10s","Akaunt","Ime","Stanje\n");
     switch (zahtjev) {
-        printf("%-10s %-10s %-10s","Akaunt","Ime","Stanje");
         case 1:
             while (fscanf(ime,"%d %s %f",&acc,name,&balance)==3){
                 if(balance==0){
