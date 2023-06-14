@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main() {
+    int id;
+    char ime[30];
+    char prezime[30];
+    float stanje;
+
+    FILE *stef= fopen("stef.txt","w");
+
+    if(stef==NULL){
+        printf("DATOTEKA SE NE MOZE OTVORITI");
+        return 1;
+    }
+
+    printf("Ukoliko zelis da stanes sa upisom podataka unesi nulu u id \n");
+    printf("Unesi id, ime, prezime i stanje na racunu \n");
+    scanf("%d",&id);
+    while(id !=0){
+        scanf("%s %s %f",ime,prezime,&stanje);
+        fprintf(stef,"%d %s %s %f \n",id,ime,prezime,stanje);
+        printf("Ukoliko zelis da stanes sa upisom podataka unesi nulu u id \n");
+        printf("Unesi id, ime, prezime i stanje na racunu \n");
+        scanf("%d",&id);
+    }
+    fclose(stef);
+    FILE *stef2= fopen("stef.txt","r");
+    printf("PODACI KOJE STE UNIJELI SU \n");
+
+    while (fscanf(stef2, "%d %s %s %f", &id, ime, prezime, &stanje) == 4) {
+        printf("%d %s %s %.2f\n", id, ime, prezime, stanje);
+    }
+
+    fclose(stef2);
+
+    return 0;
+}
