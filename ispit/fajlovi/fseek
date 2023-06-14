@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+struct bank{
+    int acctNum;
+    char lastName[15];
+    char firstName[10];
+    double balance;
+};
+
+
+int main() {
+    FILE *imeFajla= fopen("klijenti.txt","rb+");
+
+    if(imeFajla==NULL){
+        printf("greska");
+        return 1;
+    }
+
+    struct bank klijentiBanke={0,"","",0.0};
+
+    ///int broj;
+
+    printf("Unesi broj od 1-100 \n");
+
+    scanf("%d",&klijentiBanke.acctNum);
+
+    while(klijentiBanke.acctNum!=0){
+        printf("Unesi Ime,prezime, stanje \n");
+        fscanf(stdin,"%s %s %lf",klijentiBanke.firstName,klijentiBanke.lastName,&klijentiBanke.balance);
+
+        fseek(imeFajla,sizeof(struct bank)*(klijentiBanke.acctNum-1),SEEK_SET);
+        fwrite( &klijentiBanke, sizeof( struct bank ), 1, imeFajla );
+
+        printf("Unesi broj \n");
+        scanf("%d",&klijentiBanke.acctNum);
+
+
+    }
+    fclose(imeFajla);
+
+    return 0;
+} /* end main */
