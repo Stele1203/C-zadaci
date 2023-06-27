@@ -1,0 +1,68 @@
+#include <stdio.h>;
+#include <string.h>
+#include <ctype.h>
+
+
+int main() {
+
+    char imeUlaz[30];
+    char imeIzlaz[30];
+    char tekst[30];
+    char karakter;
+    FILE* ulaz;
+    FILE* izlaz;
+
+    printf("Unesi ime ulazne datoteke:\n");
+    scanf("%s", imeUlaz);
+    printf("Unesi ime izlazne datoteke:\n");
+    scanf("%s", imeIzlaz);
+
+    strcat(imeUlaz, ".txt");
+    strcat(imeIzlaz, ".txt");
+
+    ulaz = fopen(imeUlaz, "w");
+    if (ulaz == NULL) {
+        printf("Greska pri otvaranju ulazne datoteke.\n");
+        return -1;
+    }
+
+
+    while(1){
+        scanf("%s",tekst);
+        if (tekst[0] == 's' && tekst[1] == 't' && tekst[2] == 'o' && tekst[3] == 'p' && tekst[4] == '\0') {
+            break;  // Izlazak iz petlje kada se unese 'stop'
+        }
+        fprintf(ulaz,tekst);
+        fprintf(ulaz,"\n");
+    }
+    fclose(ulaz);
+
+    ulaz = fopen(imeUlaz, "r");
+    if (ulaz == NULL) {
+        printf("Greska pri otvaranju ulazne datoteke.\n");
+        return -1;
+    }
+
+
+
+    izlaz = fopen(imeIzlaz, "w");
+    if (izlaz == NULL) {
+        printf("Greska pri otvaranju izlazne datoteke.\n");
+        fclose(ulaz);
+        return -1;
+    }
+
+
+    while ((karakter = fgetc(ulaz)) != EOF) {
+        if (islower(karakter)) {
+            karakter = toupper(karakter);
+        }
+        fputc(karakter, izlaz);
+    }
+
+    fclose(izlaz);
+    fclose(ulaz);
+
+
+    return 0;
+}
