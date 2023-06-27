@@ -1,0 +1,19 @@
+#include <stdio.h>;
+
+int main() {
+
+    FILE* ulaz= fopen("ulaz.txt","r");
+    char linije[50];
+    if(ulaz==NULL){
+        return -1;
+    }
+    int i=0;
+    while((fgets(linije,sizeof (linije),ulaz)) != NULL){
+        i++;
+    }
+
+    fclose(ulaz);
+    printf("%d",i);
+
+    return 0;
+}
