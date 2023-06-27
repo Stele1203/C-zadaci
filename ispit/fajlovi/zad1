@@ -1,0 +1,42 @@
+#include "stdio.h";
+
+int main() {
+
+    FILE* ulaz= fopen("ulaz.txt","r");
+    FILE* izlaz= fopen("izlaz.txt","w");
+
+    char karakter;
+    char linija[80];
+
+    if(ulaz==NULL){
+        return -1;
+    }
+
+    if(izlaz== NULL){
+        return -1;
+    }
+
+    while(karakter=fgetc(ulaz) !=EOF){
+        fputc(karakter,izlaz);
+    }
+
+    fclose(ulaz);
+    fclose(izlaz);
+
+
+    if(ulaz=fopen("ulaz.txt","r")==NULL){
+        return -1;
+    }
+
+    if(izlaz=fopen("izlaz.txt","w")== NULL){
+        return -1;
+    }
+
+    while(fgets(linija,80,ulaz) != EOF){
+        fputs(linija,izlaz);
+    }
+
+    fclose(ulaz);
+    fclose(izlaz);
+
+}
