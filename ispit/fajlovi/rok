@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    FILE* ulaz = fopen("ulaz.txt", "r");
+    FILE* a = fopen("a.txt", "w");
+    FILE* b = fopen("b.txt", "w");
+    FILE* c = fopen("c.txt", "w");
+    FILE* d = fopen("d.txt", "w");
+
+    char linija[50];
+
+    if (ulaz == NULL || a == NULL || b == NULL || c == NULL || d == NULL) {
+        printf("-1\n");
+        return -1;
+    }
+
+    while (fgets(linija, 50, ulaz) != NULL) {
+        int i = 0;
+        int brojac = 0;
+        while (linija != '\0') {
+            printf("%c",linija[i]);
+            if (linija[i] == '#') {
+                brojac++;
+                if (brojac == 2) {
+                    char smjer = linija[i + 1];
+                    printf("%c",smjer);
+                    if (smjer == 'a') {
+                        fputs(linija, a);
+                    } else if (smjer == 'b') {
+                        fputs(linija, b);
+                    } else if (smjer == 'c') {
+                        fputs(linija, c);
+                    } else if (smjer == 'd') {
+                        fputs(linija, d);
+                    }
+                    break;  // Prekidamo unutarnju petlju nakon pronalaska smjera
+                }
+            }
+            i++;
+        }
+    }
+
+    fclose(a);
+    fclose(b);
+    fclose(c);
+    fclose(d);
+    fclose(ulaz);
+
+    return 0;
+}
